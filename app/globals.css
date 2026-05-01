@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-base: #0a0a0a;
+  --bg-surface: #111111;
+  --border-color: #222222;
+  --text-body: #cccccc;
+  --text-title: #ffffff;
+  --accent: #5b6af0;
+  --accent-transparent: rgba(91, 106, 240, 0.1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg-base: var(--bg-base);
+  --color-bg-surface: var(--bg-surface);
+  --color-border: var(--border-color);
+  --color-text-body: var(--text-body);
+  --color-text-title: var(--text-title);
+  --color-accent: var(--accent);
+  --color-accent-transparent: var(--accent-transparent);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-body);
+  font-family: var(--font-sans), "Inter", sans-serif;
+}
+
+* {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-title);
+  font-family: var(--font-sans), sans-serif;
+}
+
+code, pre, .code {
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+}
+
+.border-custom {
+  border: 1px solid var(--border-color);
+}
+
+.bg-surface {
+  background-color: var(--bg-surface);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-accent-transparent {
+  background-color: var(--accent-transparent);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.3s ease-out forwards;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
 }
