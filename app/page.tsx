@@ -95,7 +95,7 @@ export default function Home() {
           </Text>
           <Spacer size="sm" />
           <Text muted className="text-xs">
-            Tools provided by <a href="https://jayox.dev/" className="text-accent hover:underline">Jayox</a> and the <a href="https://github.com/jallox/tools">Github contributors</a>.
+            Tools provided by <a href="https://jayox.dev/" className="text-accent hover:underline">Jayox</a> and the <a href="https://github.com/jallox/tools" className="text-accent hover:underline">Github contributors</a>.
           </Text>
         </footer>
       </Container>
