@@ -18,8 +18,12 @@ export function Card({ title, description, icon, href, badges, className = '' }:
           <Text className="text-2xl font-mono opacity-60 group-hover:opacity-100">{icon}</Text>
         </div>
       )}
-      <Text className="text-lg mb-2 font-sans text-text-title group-hover:text-white">{title}</Text>
-      <Text muted className="text-sm">{description}</Text>
+      <div className='flex flex-col gap-2'>
+        <Text className="text-lg font-sans text-text-title group-hover:text-white">{title}</Text>
+        <Text muted className="text-sm">
+          {description}
+        </Text>
+      </div>
       {badges && badges.length > 0 && (
         <div className="mt-4 flex gap-2">
           {badges.map((badge, i) => (
